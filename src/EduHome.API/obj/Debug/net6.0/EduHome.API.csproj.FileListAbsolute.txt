@@ -140,3 +140,5 @@ C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\obj\Debug\net6.0\refin
 C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\obj\Debug\net6.0\EduHome.API.pdb
 C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\obj\Debug\net6.0\EduHome.API.genruntimeconfig.cache
 C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\obj\Debug\net6.0\ref\EduHome.API.dll
+C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\bin\Debug\net6.0\EduHome.Business.dll
+C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\bin\Debug\net6.0\EduHome.Business.pdb

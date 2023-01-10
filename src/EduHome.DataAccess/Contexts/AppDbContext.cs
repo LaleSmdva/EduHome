@@ -20,5 +20,8 @@ namespace EduHome.DataAccess.Contexts
 		{
 			modelBuilder.ApplyConfigurationsFromAssembly(typeof(CourseConfiguration).Assembly);
 		}
+
+
+
 	}
 }
