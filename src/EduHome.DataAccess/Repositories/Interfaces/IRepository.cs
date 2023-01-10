@@ -10,7 +10,7 @@ namespace EduHome.DataAccess.Repositories.Interfaces;
 
 public interface IRepository<T> where T:class,IEntity,new()
 {
-	 Task<IEnumerable<T>> GetAll();
-     DbSet<T> Table { get; set; } 
+	 IEnumerable<T> GetAll();
+	DbSet<T> Table { get; }
 }
 

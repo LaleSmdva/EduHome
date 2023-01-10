@@ -22,11 +22,11 @@ namespace EduHome.DataAccess.Repositories.Implementations
 			//_table = table;
 		}
 
-		public DbSet<T> Table { get; set; }
+		public DbSet<T> Table => _context.Set<T>();
 
-		public Task<IEnumerable<T>> GetAll()
+		public IEnumerable<T> GetAll()
 		{
-			throw new NotImplementedException();
+			return Table.AsEnumerable();
 		}
 	}
 }
