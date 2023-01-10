@@ -1,4 +1,6 @@
-﻿using EduHome.Business.Exceptions;
+﻿using AutoMapper;
+using EduHome.Business.DTOs.Courses;
+using EduHome.Business.Exceptions;
 using EduHome.Business.Services.Interfaces;
 using EduHome.Core.Entities;
 using EduHome.DataAccess.Repositories.Implementations;
@@ -16,10 +18,12 @@ namespace EduHome.Business.Services.Implementations
 	public class CourseService:ICourseService
 	{
 		private readonly ICourseRepository _courseRepository;
+		private readonly IMapper _mapper;
 
-		public CourseService(ICourseRepository courseRepository)
+		public CourseService(ICourseRepository courseRepository, IMapper mapper)
 		{
 			_courseRepository = courseRepository;
+			_mapper = mapper;
 		}
 
 		public async Task<List<Course>> FindByCondition(Expression<Func<Course, bool>> expression)
@@ -32,11 +36,12 @@ namespace EduHome.Business.Services.Implementations
 			return _courseRepository.FinddById(id);
 		}
 
-		public async Task<List<Course>> GetAllAsync()
+		public async Task<List<CourseDTO>> GetAllAsync()
 		{
 			var courses = _courseRepository.FindAll().ToList();
+			var result= _mapper.Map<List<CourseDTO>>(courses);
 			//if (courses == null || courses.Count == 0) throw new NotFoundException("Not found!");
-			return courses;
+			return result;
 		}
 		public async Task CreateAsync(Course entity)
 		{

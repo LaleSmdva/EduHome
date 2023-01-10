@@ -1,4 +1,5 @@
 //using EduHome.Business.Contexts;
+using EduHome.Business.Mappers;
 using EduHome.Business.Services.Implementations;
 using EduHome.Business.Services.Interfaces;
 using EduHome.DataAccess.Contexts;
@@ -19,6 +20,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 //IoC
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();  //injectionda istifade olunur
 builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddAutoMapper(typeof(CourseMapper).Assembly);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

@@ -1,4 +1,5 @@
-﻿using EduHome.Core.Entities;
+﻿using EduHome.Business.DTOs.Courses;
+using EduHome.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace EduHome.Business.Services.Interfaces
 {
 	public interface ICourseService
 	{
-		Task<List<Course>> GetAllAsync();
+		Task<List<CourseDTO>> GetAllAsync();
 
 		Task<List<Course>> FindByCondition(Expression<Func<Course, bool>> expression);
 		Course FindById(int id);
