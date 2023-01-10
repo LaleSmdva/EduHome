@@ -21,7 +21,6 @@ namespace EduHome.DataAccess.Repositories.Implementations
 			_context = context;
 			//_table = table;
 		}
-
 		public DbSet<T> Table => _context.Set<T>();
 
 		public IEnumerable<T> GetAll()
