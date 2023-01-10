@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,9 +24,39 @@ namespace EduHome.DataAccess.Repositories.Implementations
 		}
 		public DbSet<T> Table => _context.Set<T>();
 
-		public IEnumerable<T> GetAll()
+		public IQueryable<T> FindAll()
 		{
-			return Table.AsEnumerable();
+			return Table.AsQueryable();
+		}
+
+		public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression)
+		{
+			return Table.Where(expression).AsNoTracking();
+		}
+
+		public T FinddById(int id)
+		{
+			return Table.Find(id);
+		}
+		public async Task Create(T entity)
+		{
+		await Table.AddAsync(entity);
+		}
+
+		public void Delete(T entity)
+		{
+			Table.Remove(entity);
+		}
+
+	
+		public void Update(T entity)
+		{
+			Table.Update(entity);
+		}
+
+		public async Task Save()
+		{
+			await _context.SaveChangesAsync();
 		}
 	}
 }

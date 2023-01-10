@@ -16,7 +16,7 @@ namespace EduHome.API.Conrollers
 			_courseService = courseService;
 		}
 		//[HttpGet,Route("GetCourses")]
-		[HttpGet("GetCourses")]
+		[HttpGet("")]
 		public async Task<IActionResult> Get()
 		{
 			try
@@ -29,7 +29,24 @@ namespace EduHome.API.Conrollers
 
 				return NotFound(ex.Message);
 			}
-		
+
 		}
+
+		//[HttpGet]
+		//public async Task<IActionResult> Get()
+		//{
+		//	var courses = await _courseService.GetAllAsync();
+
+		//	if (courses == null || courses.Count==0 )
+		//	{
+		//		throw new NotFoundException("not found");
+		//	}
+		//	return Ok(courses);
+		//}
+
+		//public async Task  Create()
+		//{
+
+		//}
 	}
 }
