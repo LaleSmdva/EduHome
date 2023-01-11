@@ -13,6 +13,7 @@ public class CourseMapper:Profile
 {
 	public CourseMapper()
 	{
-		CreateMap<Course, CourseDTO>();
+		CreateMap<Course, CourseDTO>().ReverseMap();
+		CreateMap<Course, CoursePostDTO>().ReverseMap();
 	}
 }

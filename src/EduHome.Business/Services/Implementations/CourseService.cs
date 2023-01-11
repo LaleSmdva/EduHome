@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace EduHome.Business.Services.Implementations
 {
-	public class CourseService:ICourseService
+	public class CourseService : ICourseService
 	{
 		private readonly ICourseRepository _courseRepository;
 		private readonly IMapper _mapper;
@@ -39,13 +39,15 @@ namespace EduHome.Business.Services.Implementations
 		public async Task<List<CourseDTO>> GetAllAsync()
 		{
 			var courses = _courseRepository.FindAll().ToList();
-			var result= _mapper.Map<List<CourseDTO>>(courses);
+			var result = _mapper.Map<List<CourseDTO>>(courses);
 			//if (courses == null || courses.Count == 0) throw new NotFoundException("Not found!");
 			return result;
 		}
-		public async Task CreateAsync(Course entity)
+		public async Task CreateAsync(CoursePostDTO entity)
 		{
-			await _courseRepository.Create(entity);
+			var result=_mapper.Map<Course>(entity);
+			await _courseRepository.Create(result);
+			await _courseRepository.Save();
 		}
 
 		public void Update(Course entity)
@@ -58,8 +60,8 @@ namespace EduHome.Business.Services.Implementations
 			_courseRepository.Delete(entity);
 		}
 
-		
 
-	
+
+
 	}
 }
