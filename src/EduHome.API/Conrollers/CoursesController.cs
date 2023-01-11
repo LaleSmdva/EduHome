@@ -40,7 +40,7 @@ namespace EduHome.API.Conrollers
 
 		[HttpPost]
 
-		public async Task<IActionResult> Create(CoursePostDTO coursePostDTO)
+		public async Task<IActionResult> Post(CoursePostDTO coursePostDTO)
 		{
 			try
 			{
@@ -55,23 +55,42 @@ namespace EduHome.API.Conrollers
 				return StatusCode((int)HttpStatusCode.InternalServerError);
 			}
 		}
+		[HttpGet("getbyid")]
+		public async Task<IActionResult> GetById(int id)
+		{
+			try
+			{
+				var course = await _courseService.FindById(id);
+				return Ok(course);
+			}
+			//catch (FormatException)
+			//{
+			//	throw new NotFoundException("not found");
+			//}
+			catch (NotFoundException)
+			{
+				throw new NotFoundException("not found");
+			}
+			catch (Exception)
+			{
+				return StatusCode((int)HttpStatusCode.InternalServerError);
+			}
 
+		}
+		[HttpGet("getbyname")]
+		public async Task<IActionResult> GetByCondition(string name)
+		{
 
-		//[HttpGet]
-		//public async Task<IActionResult> Get()
-		//{
-		//	var courses = await _courseService.GetAllAsync();
+			try
+			{
+				var result=await _courseService.FindByCondition(c => c.Name.Contains(name));
 
-		//	if (courses == null || courses.Count==0 )
-		//	{
-		//		throw new NotFoundException("not found");
-		//	}
-		//	return Ok(courses);
-		//}
-
-		//public async Task  Create()
-		//{
-
-		//}
+				return Ok(result);
+			}
+			catch (Exception)
+			{
+				throw new NotFoundException("not found");
+			}
+		}
 	}
 }

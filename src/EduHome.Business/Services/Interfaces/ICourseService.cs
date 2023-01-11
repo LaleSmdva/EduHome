@@ -14,7 +14,7 @@ namespace EduHome.Business.Services.Interfaces
 		Task<List<CourseDTO>> GetAllAsync();
 
 		Task<List<Course>> FindByCondition(Expression<Func<Course, bool>> expression);
-		Course FindById(int id);
+		Task<CourseDTO> FindById(int id);
 		Task CreateAsync(CoursePostDTO entity);
 		void Update(Course entity);
 		void Delete(Course entity);

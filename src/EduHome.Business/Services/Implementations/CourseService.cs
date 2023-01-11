@@ -26,14 +26,17 @@ namespace EduHome.Business.Services.Implementations
 			_mapper = mapper;
 		}
 
-		public async Task<List<Course>> FindByCondition(Expression<Func<Course, bool>> expression)
-		{
-			return await _courseRepository.FindByCondition(expression).ToListAsync();
-		}
+	
 
-		public Course FindById(int id)
+		public async Task<CourseDTO> FindById(int id)
 		{
-			return _courseRepository.FinddById(id);
+			var course = _courseRepository.FinddById(id);
+			if(course == null)
+			{
+				throw new NotFoundException("not found!");
+			}
+			var result=_mapper.Map<CourseDTO>(course);
+			return result;
 		}
 
 		public async Task<List<CourseDTO>> GetAllAsync()
@@ -41,6 +44,13 @@ namespace EduHome.Business.Services.Implementations
 			var courses = _courseRepository.FindAll().ToList();
 			var result = _mapper.Map<List<CourseDTO>>(courses);
 			//if (courses == null || courses.Count == 0) throw new NotFoundException("Not found!");
+			return result;
+		}
+
+		public async Task<List<Course>> FindByCondition(Expression<Func<Course, bool>> expression)
+		{
+			var courses= await _courseRepository.FindByCondition(expression).ToListAsync();
+			var result=_mapper.Map<List<Course>>(courses);
 			return result;
 		}
 		public async Task CreateAsync(CoursePostDTO entity)
