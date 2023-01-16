@@ -147,3 +147,8 @@ C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\bin\Debug\net6.0\AutoM
 C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\User\Desktop\EduHomeLast\EduHome\src\EduHome.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

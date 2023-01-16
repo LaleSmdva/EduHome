@@ -4,12 +4,15 @@ using EduHome.Business.Mappers;
 using EduHome.Business.Services.Implementations;
 using EduHome.Business.Services.Interfaces;
 using EduHome.Business.Validators;
+using EduHome.Core.Entities.Identity;
 using EduHome.DataAccess.Contexts;
 using EduHome.DataAccess.Repositories.Implementations;
 using EduHome.DataAccess.Repositories.Interfaces;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +25,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
 	options.UseSqlServer(constr);
 });
+builder.Services.AddIdentity<AppUser,IdentityRole>(options =>
+{
+	options.Password.RequiredUniqueChars=1;
+	options.Password.RequireDigit=true;
+	options.Password.RequireNonAlphanumeric = true;
+	options.Password.RequiredLength = 6;
+	
+}).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
 //IoC
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();  //injectionda istifade olunur
 builder.Services.AddScoped<ICourseService, CourseService>();
@@ -37,6 +48,8 @@ builder.Services.AddValidatorsFromAssembly(typeof(CoursePostDTOValidator).Assemb
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -48,6 +61,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
