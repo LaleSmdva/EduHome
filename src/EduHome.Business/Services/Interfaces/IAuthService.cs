@@ -10,5 +10,6 @@ namespace EduHome.Business.Services.Interfaces
 	public interface IAuthService
 	{
 		Task Register(RegisterDTO registerDTO);
+		Task<TokenResponseDTO> Login(LoginDTO loginDTO);
 	}
 }
