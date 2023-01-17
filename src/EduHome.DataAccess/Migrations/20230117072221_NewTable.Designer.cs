@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduHome.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230116232623_NewTable")]
+    [Migration("20230117072221_NewTable")]
     partial class NewTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

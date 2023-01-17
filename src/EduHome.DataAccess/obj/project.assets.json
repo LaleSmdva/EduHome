@@ -2106,19 +2106,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\ClassTime\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\EduHomeLast\\EduHome\\src\\EduHome.DataAccess\\EduHome.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\ClassTime\\Desktop\\EduHome\\EduHome\\src\\EduHome.DataAccess\\EduHome.DataAccess.csproj",
       "projectName": "EduHome.DataAccess",
-      "projectPath": "C:\\Users\\User\\Desktop\\EduHomeLast\\EduHome\\src\\EduHome.DataAccess\\EduHome.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\EduHomeLast\\EduHome\\src\\EduHome.DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\ClassTime\\Desktop\\EduHome\\EduHome\\src\\EduHome.DataAccess\\EduHome.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\ClassTime\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ClassTime\\Desktop\\EduHome\\EduHome\\src\\EduHome.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ClassTime\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2132,8 +2137,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\EduHomeLast\\EduHome\\src\\EduHome.Core\\EduHome.Core.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\EduHomeLast\\EduHome\\src\\EduHome.Core\\EduHome.Core.csproj"
+            "C:\\Users\\ClassTime\\Desktop\\EduHome\\EduHome\\src\\EduHome.Core\\EduHome.Core.csproj": {
+              "projectPath": "C:\\Users\\ClassTime\\Desktop\\EduHome\\EduHome\\src\\EduHome.Core\\EduHome.Core.csproj"
             }
           }
         }
@@ -2177,7 +2182,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
