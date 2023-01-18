@@ -9,7 +9,7 @@ namespace EduHome.Core.Entities.Identity;
 
 public class AppUser:IdentityUser
 {
-	public string Fullname { get; set; }
+	public string? Fullname { get; set; }
 
 
 }
